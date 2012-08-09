@@ -192,3 +192,33 @@ var obj = plus.columns(req.query, ["username", "password"]);
 ```
 搭配`Array.prototype.map`，可以对一个数组进行数据抽取。
 
+### _tablify(list)_
+将一个对象集合转化为二维表格。
+
+```
+var list = [
+    {"username": "JacksonTian", "nick": "朴灵", "hometown": "Chongqing"},
+    {"username": "Fengmk2", "nick": "苏千", "hometown": "Guangzhou"}
+];
+plus.tablify(list);
+//[
+//  ["username", "nick", "hometown"],
+//  ["JacksonTian", "朴灵", "Chongqing"],
+//  ["Fengmk2", "苏千", "Guangzhou"]
+//]
+```
+### _collectionify(table)_
+tablify的反向工程。
+```
+var table = [
+  ["username", "nick", "hometown"],
+  ["JacksonTian", "朴灵", "Chongqing"],
+  ["Fengmk2", "苏千", "Guangzhou"]
+];
+
+plus.collectionify(list);
+//[
+//  {"username": "JacksonTian", "nick": "朴灵", "hometown": "Chongqing"},
+//  {"username": "Fengmk2", "nick": "苏千", "hometown": "Guangzhou"}
+//];
+```
