@@ -193,7 +193,7 @@ var obj = plus.columns(req.query, ["username", "password"]);
 搭配`Array.prototype.map`，可以对一个数组进行数据抽取。
 
 ### _tablify(list)_
-将一个对象集合转化为二维表格。
+将一个对象集合转化为二维表格。也许你为了节省网络传输的带宽而选择这么做。
 
 ```
 var list = [
@@ -208,7 +208,8 @@ plus.tablify(list);
 //]
 ```
 ### _collectionify(table)_
-tablify的反向工程。
+tablify的反向工程。为了代码的调用更舒适，多半你喜欢将二维表还原。  
+
 ```
 var table = [
   ["username", "nick", "hometown"],

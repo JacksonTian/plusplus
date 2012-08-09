@@ -17,5 +17,18 @@ describe("PlusPlus", function () {
     ret.should.eql(expect);
   });
 
+  it("Collectionify", function () {
+    var table = [
+     ["username", "nick", "hometown"],
+     ["JacksonTian", "朴灵", "Chongqing"],
+     ["Fengmk2", "苏千", "Guangzhou"]
+    ];
+    var ret = plus.collectionify(table);
+    var expect = [
+        {"username": "JacksonTian", "nick": "朴灵", "hometown": "Chongqing"},
+        {"username": "Fengmk2", "nick": "苏千", "hometown": "Guangzhou"}
+    ];
+    ret.should.eql(expect);
+  });
   // TODO
 });
