@@ -13,6 +13,9 @@
   "keywords": [
     "Underscore"
   ],
+  "devDependencies": {
+    "mocha": "*"
+  },
   "author": "Jackson Tian",
   "license": "MIT"
 }
