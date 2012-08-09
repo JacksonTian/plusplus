@@ -1,5 +1,5 @@
 {
-  "name": "overscore",
+  "name": "plusplus",
   "version": "0.0.1",
   "description": "Underscore complicate.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/JacksonTian/underscore.node.git"
+    "url": "git://github.com/JacksonTian/plusplus.git"
   },
   "keywords": [
     "Underscore"
