@@ -1,1 +1,1 @@
-module.exports = require('./lib/overscore.js');
+module.exports = require('./lib/plusplus.js');
