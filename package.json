@@ -1,7 +1,7 @@
 {
   "name": "plusplus",
-  "version": "0.0.1",
-  "description": "Underscore complicate.",
+  "version": "0.0.2",
+  "description": "I need a better Underscore in Node.js.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -11,7 +11,7 @@
     "url": "git://github.com/JacksonTian/plusplus.git"
   },
   "keywords": [
-    "Underscore"
+    "Underscore", "PlusPlus", "Object", "Collection", "Array"
   ],
   "devDependencies": {
     "mocha": "*"
