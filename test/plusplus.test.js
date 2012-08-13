@@ -154,6 +154,15 @@ describe("PlusPlus", function () {
     plus.flatten(arr3, true).should.be.eql([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   });
 
+  it("column", function () {
+    var arr = [
+      [0, 1, 2, 3, 4],
+      [5, 6, 7, 8, 9]
+    ];
+    plus.column(arr, 0).should.be.eql([0, 5]);
+    plus.column(arr, -1).should.be.eql([undefined, undefined]);
+  });
+
   it("columns", function () {
     var arr = [
       [0, 1, 2, 3, 4],
