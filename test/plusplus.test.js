@@ -123,7 +123,7 @@ describe("PlusPlus", function () {
     plus.rename(obj, "from", "to").should.be.eql({"to": "I am value."});
   });
 
-  it("columns", function () {
+  it("pick", function () {
     var obj = {
       "username": "JacksonTian",
       "password": "I am password ^_^",
@@ -133,7 +133,34 @@ describe("PlusPlus", function () {
       username: 'JacksonTian',
       password: 'I am password ^_^'
     };
-    plus.columns(obj, ["username", "password"]).should.be.eql(expect);
+    plus.pick(obj, ["username", "password"]).should.be.eql(expect);
   });
 
+  it("flatten", function () {
+    var arr = [
+      [0, 1, 2, 3, 4],
+      [5, 6, 7, 8, 9]
+    ];
+    plus.flatten(arr).should.be.eql([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    var arr2 = [
+      [0, [1, 2], 3, 4],
+      [5, 6, 7, 8, 9]
+    ];
+    plus.flatten(arr2).should.be.eql([0, [1, 2], 3, 4, 5, 6, 7, 8, 9]);
+    var arr3 = [
+      [0, [1, 2], 3, 4],
+      [5, 6, 7, 8, 9]
+    ];
+    plus.flatten(arr3, true).should.be.eql([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  });
+
+  it("columns", function () {
+    var arr = [
+      [0, 1, 2, 3, 4],
+      [5, 6, 7, 8, 9]
+    ];
+    plus.columns(arr, [0, 1]).should.be.eql([[0, 1], [5, 6]]);
+    plus.columns(arr, 0, 1).should.be.eql([[0, 1], [5, 6]]);
+    plus.columns(arr, [0], 1).should.be.eql([[0, 1], [5, 6]]);
+  });
 });
