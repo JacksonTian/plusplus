@@ -172,4 +172,10 @@ describe("PlusPlus", function () {
     plus.columns(arr, 0, 1).should.be.eql([[0, 1], [5, 6]]);
     plus.columns(arr, [0], 1).should.be.eql([[0, 1], [5, 6]]);
   });
+
+  it("without", function () {
+    var arr1 = [1, 2, 3, 4, 5, 6];
+    var arr2 = [4, 5, 6, 7, 8];
+    plus.without(arr1, arr2).should.be.eql([1, 2, 3]);
+  });
 });
