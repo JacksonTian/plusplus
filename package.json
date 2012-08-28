@@ -1,6 +1,6 @@
 {
   "name": "plusplus",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "I need a better Underscore in Node.js.",
   "main": "index.js",
   "scripts": {
