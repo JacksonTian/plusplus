@@ -240,5 +240,27 @@ describe("PlusPlus", function () {
       plus.objectify(list, "username").should.be.eql({});
     });
   });
-  
+
+  describe("top", function () {
+    it("top", function () {
+      var list = [
+        [1],
+        ["a", "b"],
+        ["甲", "乙", "丙"],
+        ["子", "丑", "寅", "卯"],
+        ["一", "二", "三", "四", "五"]
+      ];
+      var expect1 = [1, "a", "甲", "子", "一"];
+      var expect2 = [1, "a", "甲", "子", "一", "b"];
+      var expect3 = [];
+      var expect4 = [1, "a", "甲", "子", "一", "b", "乙"];
+      plus.top(list, 5).should.be.eql(expect1);
+      plus.top(list, 6).should.be.eql(expect2);
+      plus.top(list, 0).should.be.eql(expect3);
+      plus.top(list, 7).should.be.eql(expect4);
+
+      var expect5 = [1, 'a', '甲', '子', '一', 'b', '乙', '丑', '二', '丙', '寅', '三', '卯', '四'];
+      plus.top(list, 100).should.be.eql(expect5);
+    });
+  });
 });
