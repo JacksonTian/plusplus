@@ -139,6 +139,11 @@ describe("PlusPlus", function () {
       var obj = {"from": "I am value."};
       plus.rename(obj, "from", "to").should.be.eql({"to": "I am value."});
     });
+
+    it("rename when key is inexsit", function () {
+      var obj = {};
+      plus.rename(obj, "from", "to").should.be.eql({});
+    });
   });
 
   describe("pick", function () {
