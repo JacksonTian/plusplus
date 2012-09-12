@@ -304,6 +304,15 @@ describe("PlusPlus", function () {
       plus.lessN(list, 5).should.be.eql([1, 4, 2, 3, 0]);
     });
 
+    it("lessN without field when same value", function () {
+      var list = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+      plus.lessN(list, 15).should.be.eql([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+      plus.lessN(list, 10).should.be.eql([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+      plus.lessN(list, 9).should.be.eql([1, 1, 1, 1, 1, 1, 1, 1, 1]);
+      plus.lessN(list, 8).should.be.eql([1, 1, 1, 1, 1, 1, 1, 1]);
+      plus.lessN(list, 5).should.be.eql([1, 1, 1, 1, 1]);
+    });
+
     it("lessN with field", function () {
       var list = [
         {count: 99, score: 1},
@@ -368,6 +377,73 @@ describe("PlusPlus", function () {
         {count: 94, score: 2},
         {count: 93, score: 3},
         {count: 90, score: 0}
+      ]);
+    });
+
+    it("lessN with field when same value", function () {
+      var list = [
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1},
+        {count: 91, score: 1},
+        {count: 90, score: 1}
+      ];
+      plus.lessN(list, 15, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1},
+        {count: 91, score: 1},
+        {count: 90, score: 1}
+      ]);
+      plus.lessN(list, 10, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1},
+        {count: 91, score: 1},
+        {count: 90, score: 1}
+      ]);
+      plus.lessN(list, 9, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1},
+        {count: 91, score: 1}
+      ]);
+      plus.lessN(list, 8, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1}
+      ]);
+      plus.lessN(list, 5, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1}
       ]);
     });
   });
@@ -464,6 +540,73 @@ describe("PlusPlus", function () {
         {count: 95, score: 5},
         {count: 92, score: 6},
         {count: 91, score: 9}
+      ]);
+    });
+
+    it("greatN with field when same value", function () {
+      var list = [
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1},
+        {count: 91, score: 1},
+        {count: 90, score: 1}
+      ];
+      plus.greatN(list, 15, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1},
+        {count: 91, score: 1},
+        {count: 90, score: 1}
+      ]);
+      plus.greatN(list, 10, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1},
+        {count: 91, score: 1},
+        {count: 90, score: 1}
+      ]);
+      plus.greatN(list, 9, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1},
+        {count: 91, score: 1}
+      ]);
+      plus.greatN(list, 8, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1},
+        {count: 94, score: 1},
+        {count: 93, score: 1},
+        {count: 92, score: 1}
+      ]);
+      plus.greatN(list, 5, "score").should.be.eql([
+        {count: 99, score: 1},
+        {count: 98, score: 1},
+        {count: 97, score: 1},
+        {count: 96, score: 1},
+        {count: 95, score: 1}
       ]);
     });
   });
