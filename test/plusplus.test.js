@@ -610,4 +610,21 @@ describe("PlusPlus", function () {
       ]);
     });
   });
+
+  describe("listify", function () {
+    it("listify", function () {
+      var obj = {"key1": "value1", "key2": "value2", "key3": "value3"};
+      var expect1 = [
+        {key: "key1", value: "value1"},
+        {key: "key2", value: "value2"},
+        {key: "key3", value: "value3"}
+      ];
+      var expect2 = [];
+      plus.listify(obj, "key", "value").should.be.eql(expect1);
+      plus.listify(obj).should.be.eql(expect2);
+      plus.listify(obj, "key").should.be.eql(expect2);
+      plus.listify(obj, undefined, undefined).should.be.eql(expect2);
+
+    });
+  });
 });
