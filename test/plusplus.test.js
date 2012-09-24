@@ -627,4 +627,37 @@ describe("PlusPlus", function () {
 
     });
   });
+
+  describe("uniqueBy", function () {
+    it("uniqueBy", function () {
+      var list = [
+        {key: "key1", value: "value1"},
+        {key: "key2", value: "value2"},
+        {key: "key3", value: "value3"},
+        {key: "key1", value: "value4"}
+      ];
+      var expect1 = [
+        {key: "key1", value: "value1"},
+        {key: "key2", value: "value2"},
+        {key: "key3", value: "value3"}
+      ];
+      var expect2 = [
+        {key: "key1", value: "value1"},
+        {key: "key2", value: "value2"},
+        {key: "key3", value: "value3"},
+        {key: "key1", value: "value4"}
+      ];
+
+      plus.uniqueBy(list, "key").should.be.eql(expect1);
+      plus.uniqueBy(list, "value").should.be.eql(expect2);
+    });
+  });
+
+  describe("unique", function () {
+    it("unique", function () {
+      var list = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1];
+      var expect1 = [1, 2, 3, 4, 5, 6];
+      plus.unique(list).should.be.eql(expect1);
+    });
+  });
 });
