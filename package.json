@@ -4,7 +4,8 @@
   "description": "I need a better Underscore in Node.js.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec",
+    "build": "node bin/build_doc.js & open doc/index.html"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
     "Underscore", "PlusPlus", "Object", "Collection", "Array"
   ],
   "devDependencies": {
+    "ejs": "*",
     "mocha": "*"
   },
   "author": "Jackson Tian",

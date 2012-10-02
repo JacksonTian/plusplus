@@ -615,16 +615,24 @@ describe("PlusPlus", function () {
     it("listify", function () {
       var obj = {"key1": "value1", "key2": "value2", "key3": "value3"};
       var expect1 = [
+        {mykey: "key1", myvalue: "value1"},
+        {mykey: "key2", myvalue: "value2"},
+        {mykey: "key3", myvalue: "value3"}
+      ];
+      var expect2 = [
+        {mykey: "key1", value: "value1"},
+        {mykey: "key2", value: "value2"},
+        {mykey: "key3", value: "value3"}
+      ];
+      var expect3 = [
         {key: "key1", value: "value1"},
         {key: "key2", value: "value2"},
         {key: "key3", value: "value3"}
       ];
-      var expect2 = [];
-      plus.listify(obj, "key", "value").should.be.eql(expect1);
-      plus.listify(obj).should.be.eql(expect2);
-      plus.listify(obj, "key").should.be.eql(expect2);
-      plus.listify(obj, undefined, undefined).should.be.eql(expect2);
-
+      plus.listify(obj, "mykey", "myvalue").should.be.eql(expect1);
+      plus.listify(obj, "mykey").should.be.eql(expect2);
+      plus.listify(obj).should.be.eql(expect3);
+      plus.listify(obj, undefined, undefined).should.be.eql(expect3);
     });
   });
 
