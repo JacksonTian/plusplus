@@ -15,7 +15,7 @@
     "Underscore", "PlusPlus", "Object", "Collection", "Array"
   ],
   "devDependencies": {
-    "ejs": "*",
+    "should": "*",
     "mocha": "*"
   },
   "author": "Jackson Tian",
